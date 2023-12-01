@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&family=Ubuntu&display=swap');
+
+:root {
+    --bg-color: #252A34;
+    --bg-color2: #3d4657;
+    --bg-color3: #5c6a83;
+    --contrast-color1: #08D9D6;
+    --contrast-color2: #FF2E63;
+    --font-color: #EAEAEA;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;   
+    transition: all 0.5s ease-in-out;    
+}
+
+body{
+    height: 100vh;
+    background-color: #252A34;
+    opacity: 1;
+    background-image:  radial-gradient(#FF2E63 0.75px, transparent 0.75px), radial-gradient(#FF2E63 0.75px, #252A34 0.75px);
+    background-size: 30px 30px;
+    background-position: 0 0,15px 15px;
+}
+
+.main-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.content{
+    position: relative;
+    height: 650px;
+    width: 1140px;
+    border-radius: 15px;
+    background-color: var(--bg-color);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/*********************************************************
+    Main screen styles
+**********************************************************/
+.main-screen{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.main-screen.show{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.title{
+    position: relative;
+    border: 2px solid var(--bg-color2);
+    padding: 15px 25px;
+    border-radius: 60px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    color: var(--contrast-color2);
+    font-size: 48pt;
+    display: block;
+}
+
+.title .text{
+    position: relative;
+    
+    z-index: 6;
+}
+
+.title .slide-title-1{
+    background-color: var(--bg-color2);
+    position: absolute;
+    bottom: 0;
+    left: -280px;
+    width: 50%;
+    height: 100%;
+    z-index: 5;
+}
+
+.title .slide-title-2{
+    background-color: var(--bg-color2);
+    position: absolute;
+    bottom: 0;
+    right: -280px;
+    width: 50%;
+    height: 100%;
+    z-index: 5;
+}
+
+.title:hover .slide-title-2{
+    right: 0;
+}
+
+.title:hover .slide-title-1{
+    left: 0;
+}
+
+.title:hover .conecta4{
+    color: var(--contrast-color2);
+}
+
+.conecta4{
+    color: var(--contrast-color1);
+}
+
+.title:hover .text{
+    color: var(--contrast-color1);
+}
+
+.input-name-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*********************************************************
+    Main screen styles END
+**********************************************************/
+
+
+/*********************************************************
+    Sidebar styles
+**********************************************************/
+
+.sidebar{
+    position: absolute;
+    top: 0;
+    left: 0;    
+    width: 100%; 
+    height: 100%;
+    display: block;
+
+    background-color: var(--bg-color);
+    transition-delay: 0.5s;
+    transition: all 0.5s ease-in-out;
+    border-radius: 15px;   
+    
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.show{   
+    border-radius: 15px 0px 0px 15px;
+    width: 400px;
+    opacity: 1;
+    pointer-events: all;
+}
+
+/*********************************************************
+    Sidebar styles END
+**********************************************************/
+
+/*********************************************************
+    Sidebar elements styles 
+**********************************************************/
+.title-small-container{
+    width: 400px;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .title-small{
+    font-size: 22pt;   
+    opacity: 1;
+    color: var(--contrast-color2);
+
+    text-align: center;
+
+    border: 2px solid var(--bg-color2);
+    padding: 5px 15px;
+    border-radius: 45px;
+    margin-bottom: 10px;
+    margin: 0;
+}
+
+.title-small:hover{
+    color: var(--contrast-color1);
+}
+
+.title-small:hover .conecta4{
+    color: var(--contrast-color2);
+}
+
+.sidebar-element{
+    height: 35px;
+    width: 400px;
+
+    padding-left: 10px;
+    color: var(--font-color);
+    opacity: 0;
+}
+
+.sidebar-element.show{
+    opacity: 1;
+}
+
+/*********************************************************
+    Sidebar elements styles END
+**********************************************************/
+
+.game-board{
+    position: relative;
+    top: -650px;
+    left: 400px;  
+    height: 650px;
+    width: 740px;
+    border-radius: 0 15px 15px 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.game-board.show {
+    background-color: var(--bg-color2);
+    opacity: 1;
+    pointer-events: all;    
+}
+
+.room-election{ 
+    color: var(--font-color);   
+    position: absolute;
+    top: 200px;
+    left: 280px;
+    height: 200px;
+    width: 200px;
+    opacity: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    pointer-events: none;
+}
+
+.room-election.show {    
+    opacity: 1;
+    pointer-events: all;
+    transition-delay: 0.25s;
+}
+
+.join{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.waiting-room{
+    color: var(--font-color);  
+    position: absolute;
+    top: 200px;
+    left: 280px;
+    height: 200px;
+    width: 200px;
+    opacity: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    pointer-events: none;
+}
+
+.waiting-room.show{
+    opacity: 1;
+    pointer-events: all;
+    animation-delay: 0.25s;    
+}
+
+#message{
+    color: var(--font-color);  
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    height: 200px;
+    width: 200px;
+    opacity: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    pointer-events: none;
+}
+
+#message.show{
+    opacity: 1;
+    pointer-events: all;
+    animation-delay: 0.25s;    
+}
+
+
+/*********************************************************
+    Board 
+**********************************************************/
+
+.board{
+    color: var(--font-color);
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    height: 540px;
+    width: 640px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+.board.show{
+    opacity: 1;
+    pointer-events: all;
+    animation-delay: 0.25s;    
+}
+
+.game-state{
+    display: flex;
+    justify-content: center;
+}
+
+.game-state #turn{
+    padding: 5px 0;
+}
+#game-state-msg > div{
+    padding: 10px;
+    text-align: center;
+}
+
+
+table{
+    height: 454px;
+    width: 640px;
+    table-layout: fixed;
+}
+
+table td {
+    width: 25%; /* Ajusta esto según el número de columnas */
+    height: 16.67%; /* Ajusta esto según el número de filas */
+    transition: border 1s; 
+}
+
+table td img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto asegura que la imagen cubra toda la celda */
+}
+
+table td:hover {
+    border: 1px solid white;
+}
+
+.game-state #game-state-msg{
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: var(--font-color);
+    color: var(--bg-color);
+    transform: scale(0.1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+     
+    opacity: 0;
+    transition: all 0.2s ease-out;
+    pointer-events: none;
+}
+
+.game-state #game-state-msg.show{   
+    transform: scale(1);
+    pointer-events: all;
+    opacity: 0.75;
+    transition: all 0.2s ease-in;
+}
+
+.game-state #game-state-text{
+    font-size: xx-large;
+}
+
+/*********************************************************
+    Board END
+**********************************************************/
+
+#txtCode{
+    width: 90px;
+}
+
+.content input{
+    border: none;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin: 10px 5px;
+    background-color: var(--font-color);
+    color: var(--bg-color);
+    transition: all .35s ease-Out;
+}
+
+input:hover{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.bxs-circle{
+    color: green;
+    transform: scale(0.55);
+    animation: circle 2s infinite;
+}
+
+@keyframes circle {
+    0%{
+        filter: brightness(100%);
+    }
+    50%{
+        filter: brightness(200%);
+    }
+    100%{
+        filter: brightness(100%);
+    }
+}
+
+
+.copy{
+    padding: 2px;
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+.copy:hover{
+    padding: 2px;
+    border-radius: 100%;
+    filter: brightness(60%);
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+/*********************************************************
+    Online users Board
+**********************************************************/
+.online-users{    
+    height: 150px;
+    width: 200px;
+
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.online-users.show{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.online-user-title{
+    height: 35px;
+    width: 200px;
+
+    padding-left: 10px;
+    color: var(--font-color);
+}
+
+.online-users > div{
+    width: 100%;    
+}
+
+.online-user-body{
+    filter: brightness(85%);
+    color: var(--font-color);
+    width: 100%;
+}
+
+.online-user-body ul{
+    list-style: none;
+    font-size: 10pt;
+    height: 100%;    
+}
+
+.online-user-body li{
+    padding: 0 0 0 25px;
+}
+
+/*********************************************************
+    Online users Board END
+**********************************************************/

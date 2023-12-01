@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADIVINA QUIEEEEEEEN</title>
+
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/chat.css">
+    <link rel="stylesheet" href="./css/buttons.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body <!--class="css-selector"--></body>
+    
+    <div class="main-container">
+        <div class="content">
+            
+            <div class="main-screen show">
+                <div class="title">
+                    <div class="slide-title-1"></div>
+                    <div class="text">ADIVINA QUIEN<span class="conecta4">!!</span></div>
+                    <div class="slide-title-2"></div>
+                </div>
+    
+                <div class="input-name-container">
+                    <input type="text"
+                            placeholder="tu nombre es..."
+                            id="txtName">
+                    
+                    <div class="play">
+                        <div class="button button-1">
+                            <div class="slide-left-1"></div>
+                            <div class="button-text" id="btnPlay">jugar</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="sidebar">
+                <div class="title-small-container">
+                    <div class="title-small">
+                        Adivina Quien <span class="conecta4">!!</span>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="sidebar-element name-container">
+                    nombre: <span id="name-text"></span>
+                </div>
+
+                <div class="sidebar-element room-container">
+                    room: <span id="room-text"></span><i class='bx bxs-copy-alt copy'></i>
+                </div>
+
+                <div class="online-users">
+                    <div>
+                        <div class="online-user-title">
+                            jugadores (<span id="num-players"></span>/2)
+                        </div>
+                        <div class="online-user-body">
+                            <ul id="online-users-list"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-container">
+                    <div class="chat minimized">
+                        <div class="chat-title">
+                            chat 
+                            <i id="new-message-indicator" class='bx bxs-circle'></i>
+                            <i class='bx bx-chevron-down arrow-down'></i>
+                            <i class='bx bx-chevron-up arrow-up'></i>
+                        </div>
+                        <div class="chat-body">
+                            <ul id="chat-messages">
+                            </ul>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text"
+                                    placeholder="escribe..."
+                                    id="txtChat">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-board">
+
+                <div class="room-election" id="room-election">
+                    unirse a una sala
+                    <div class="join">
+                        <input type="text"
+                                size="6"
+                                placeholder="código"
+                                id="txtCode">
+                        <div class="button button-1 small">
+                            <div class="slide-left-1"></div>
+                            <div class="button-text" id="btnJoin">unirse</div>
+                        </div>
+                    </div>
+                    o
+                    <div class="create">
+                        <div class="button button-2">
+                            <div class="slide-left-2"></div>
+                            <div class="button-text" id="btnCreate">crear</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="waiting-room" id="waiting-room">
+                    <div class="room-code">
+                        Room: <b id="code">"code"</b><i class='bx bxs-copy-alt copy'></i>
+                    </div>
+                    esperando...
+                    <div class="button button-1" id="btnStart">
+                        <div class="slide-left-1"></div>
+                        <div class="button-text">iniciar</div>
+                    </div>
+                </div>
+
+                <div id="message">
+                    <div class="message-text">
+                        
+                    </div>
+                    <div class="message-button">
+                        <div class="button button-1">
+                            <div class="slide-left-1"></div>
+                            <div class="button-text" id="btnMessage">Regresar</div>
+                        </div>
+                    </div>
+                </div>
+
+               
+                
+                <div class="board" id="board">
+                    <div class="game-state">
+                        <div id="turn">
+                        <span id="turn-text"></span>
+
+                        </div>
+                        <div id="game-state-msg">
+                            <div id="game-state-text">                                
+                            </div>
+                            <div >
+                                una nueva partida iniciará pronto...
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tablec">
+                        <table border="1" id="tableid">
+                            <tr>
+                                <td id="1"><img src="./img/margarita.png" alt="Imagen 1"></td>
+                                <td id="2"><img src="./img/lola.png" alt="Imagen 2"></td>
+                                <td id="3"><img src="./img/oscar.png" alt="Imagen 1"></td>
+                                <td id="4"><img src="./img/mario.png" alt="Imagen 1"></td>
+                                <td id="5"><img src="./img/eugenio.png" alt="Imagen 1"></td>
+                                <td id="6"><img src="./img/leonora.png" alt="Imagen 1"></td>
+                            </tr>
+                            <tr>
+                                <td id="7"><img src="./img/soledad.png" alt="Imagen 1"></td>
+                                <td id="8"><img src="./img/lucas.png" alt="Imagen 1"></td>
+                                <td id="9"><img src="./img/alfredo.png" alt="Imagen 1"></td>
+                                <td id="10"><img src="./img/eduardo.png" alt="Imagen 1"></td>
+                                <td id="11"><img src="./img/irma.png" alt="Imagen 1"></td>
+                                <td id="12"><img src="./img/adela.png" alt="Imagen 1"></td>
+                                
+                            </tr>
+                            <tr>
+                                <td id="13"><img src="./img/fernando.png" alt="Imagen 1"></td>
+                                <td id="14"><img src="./img/ursula.png" alt="Imagen 1"></td>
+                                <td id="15"><img src="./img/victor.png" alt="Imagen 1"></td>
+                                <td id="16"><img src="./img/lucia.png" alt="Imagen 1"></td>
+                                <td id="17"><img src="./img/ernesto.png" alt="Imagen 1"></td>
+                                <td id="18"><img src="./img/julio.png" alt="Imagen 1"></td>
+                            </tr>
+                            <tr>
+                                <td id="19"><img src="./img/hilario.png" alt="Imagen 1"></td>
+                                <td id="20"><img src="./img/felipe.png" alt="Imagen 1"></td>
+                                <td id="21"><img src="./img/irene.png" alt="Imagen 1"></td>
+                                <td id="22"><img src="./img/marta.png" alt="Imagen 1"></td>
+                                <td id="23"><img src="./img/perla.png" alt="Imagen 1"></td>
+                                <td id="24"><img src="./img/hortensia.png" alt="Imagen 1"></td>
+                            </tr>
+                        </table>
+                    </div>
+                 
+                </div>
+            </div>
+
+
+        </div>
+    </div>    
+
+    <script src="./socket.io/socket.io.js"></script>
+    <script src="./js/game.js"></script>
+
+</body>
+</html>
