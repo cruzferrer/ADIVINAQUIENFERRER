@@ -6,7 +6,7 @@ const {
 const { v4: uuidv4 } = require('uuid');
 
 const { makeID } = require('../helpers/utils');
-const { createLogger } = require('vite');
+
 
 const colors = [
     {'color': '#4285f4', 'name': 'blue'},
