@@ -122,7 +122,7 @@ const enviarMensaje = ({ keyCode }) => {
 
 
     if( keyCode === 13 && mensaje.length > 0){
-        var mensajeRegex = /^[a-zA-Z0-9 ¿?.]{1,200}$/;
+        var mensajeRegex = /^[a-zA-Z0-9 ¿?.,]{1,200}$/;
     if (!mensajeRegex.test(mensaje)) {
         alert("no.");
       }
