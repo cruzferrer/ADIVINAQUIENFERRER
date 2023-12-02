@@ -234,6 +234,7 @@ body{
     pointer-events: all;    
 }
 
+
 .room-election{ 
     color: var(--font-color);   
     position: absolute;
@@ -334,6 +335,13 @@ body{
 .game-state{
     display: flex;
     justify-content: center;
+}
+
+.img.oculto {
+    display: none;
+}
+.tablec.oculto{
+    display: none;
 }
 
 .game-state #turn{

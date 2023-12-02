@@ -141,6 +141,10 @@ const socketController = async ( socket, io ) => {
             usuarios: Object.values(rooms[ roomCode ].users),
         });
 
+        socket.emit( 'mensaje', { info: personaje } );
+
+
+
         [user1, user2] = usuarioss.map(usuario => usuario.nombre);
 
 

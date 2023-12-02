@@ -1,7 +1,16 @@
 // Referencias HTML
 const divBoard = document.querySelector('#board');
 const table = document.querySelector('#tableid')
+const divimg = document.querySelector('#img');
+const divtabla = document.querySelector('#tabla');
 
+
+const mostrarImagen = () => {
+    divimg.classList.remove('oculto');
+}
+const mostrartabla = () => {
+    divtabla.classList.remove('oculto');
+}
 
 let nameee = '';
 let tilin = '';
@@ -113,7 +122,7 @@ const enviarMensaje = ({ keyCode }) => {
 
 
     if( keyCode === 13 && mensaje.length > 0){
-        var mensajeRegex = /^[a-zA-Z0-9 ]{1,20}$/;
+        var mensajeRegex = /^[a-zA-Z0-9 ¿?.]{1,200}$/;
     if (!mensajeRegex.test(mensaje)) {
         alert("no.");
       }
@@ -132,6 +141,8 @@ const enviarMensaje = ({ keyCode }) => {
 }
 
 const setNombre = () => {
+
+
     nombre = txtName.value;
 
     nameText.innerHTML = `<b>${nombre}</b>`;
@@ -174,11 +185,9 @@ const setNombre = () => {
 const mostrarTablero = () => {
     playing = true;
     divWaitingRoom.classList.remove('show');
-    
     divBoard.classList.add('show');
+    divimg.classList.add('oculto');
 
- 
-   
 }
 
 const dibujarUsuarios = ({ usuarios, admin }) => {
@@ -264,6 +273,13 @@ const comunicacionSockets = () => {
     
     socket.on('gano', (data) => {
         alert(`El usuario: ${data.user1} TE GANOOOO JUJUUU`);
+        mostrartabla();
+        divimg.classList.add('oculto');
+
+        
+    });
+    socket.on('mensaje', (data) => {
+        alert(`MENSAJE: ${data.info} ha sido seleccionado`);
     });
     socket.on('disconnect', () => {
         console.log('Socket offline');
@@ -354,14 +370,20 @@ const casilla = (event) => {
         let nombre = nombreConExtension.split(".")[0]; 
 
 
+        divtabla.classList.add('oculto');
+
+        
 
 
+        
         socket.emit( 'personaje', {per: nombre} )
 
-
+        
         aaaaa(nombre)
 
     }
+    mostrarImagen();
+    
 }
 /**
  * 
