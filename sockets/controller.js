@@ -47,8 +47,6 @@ const getColorRBG = ( roomCode ) => {
     return {}
 }
 
-
-
 const socketController = async ( socket, io ) => {
 
     let name = socket.handshake.headers['name'];
@@ -56,11 +54,6 @@ const socketController = async ( socket, io ) => {
     let id;
     let user;
     let personaje;
-    
-
-
-
-
     id = uuidv4();
 
     console.log('Intento de conexión')
@@ -222,20 +215,9 @@ const socketController = async ( socket, io ) => {
             }
 
         }
-        
+    } 
+    );
 
-    /**
-     * 
-     * if (msg.includes(personaje)) {
-
-            io.emit("gano",{nombre:personaje})
-            io.to( roomCode ).emit( 'message', { msg: `${name} ha ganado` } );
-
-
-        }   
-     */
-        
-    } );
 
     socket.on('disconnect', () => {
         desconectarUsuario( roomCode, id );
